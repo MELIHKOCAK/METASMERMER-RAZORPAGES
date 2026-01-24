@@ -1,0 +1,74 @@
+﻿@{
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PANEL</title>
+    <link href="~/css/admin.css" rel="stylesheet" />
+
+    <style>
+        .extra {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: #111F35;
+        }
+
+            .extra a {
+                display: block;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+            }
+
+        #acilirButton:focus-within .extra {
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="hamburger">☰</button>
+    <div id="main">
+        <div id="leftSide">
+            <div id="logo">
+                <h1><span>ME</span>TAŞ <span>ME</span>RMER</h1>
+            </div>
+            <form action="/" method="get">
+                <input asp-page="/Admin/Dashboard" id="cta" type="submit" value="HOMEPAGE">
+                <input asp-page="/Admin/Hero" id="cta" type="submit" value="HERO">
+                <input asp-page="/Admin/Services" id="cta" type="submit" value="SERVICE">
+                <input asp-page="/Admin/About" id="cta" type="submit" value="ABOUT">
+                <input asp-page="/Admin/Contact" id="cta" type="submit" value="CONTACT">
+                <input asp-page="/Admin/Footer" id="cta" type="submit" value="FOOTER">
+                <input asp-page="/Admin/Whatsapp" id="cta" type="submit" value="WHATSAPP">
+                <div id="acilirButton">
+                    <input id="cta" type="button" value="GALLERY">
+                    <div class="extra">
+                        <a href="/Admin/GalleryImageDelete">Fotoğraf Sil</a>
+                        <a href="/Admin/GalleryImageAdd">Fotoğraf Ekle</a>
+                    </div>
+                </div>
+            </form>
+
+            <form method="post" asp-page="/Admin/Logout">
+                <input id="cta" type="submit" value="LOGOUT">
+            </form>
+        </div>
+
+        <div id="rightSide">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('hamburger');
+        const sideBar = document.getElementById('leftSide');
+
+        btn.addEventListener('click', () => {
+            sideBar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

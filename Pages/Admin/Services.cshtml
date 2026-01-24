@@ -1,0 +1,48 @@
+﻿@page
+@model RazorPages.Deneme.Pages.Admin.HeaderModel
+@{
+    var services = Model.context.Services.FirstOrDefault();
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content{
+        padding:1vw;
+    }
+
+    #yeniDeger{
+        display:flex;
+        flex-direction:column;
+    }
+
+    input{
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <!-- Bu Template Üzerine Diğer Sayfalarınıda
+
+    Tasarla Unutma Bir Form İçerisinde olmalılar. asp-for ve asp-page-handler tag helperlarını iyi araştır -->
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Title: " <u>@services.Title</u> "</label>
+            <br />
+            <label  for="">Desc: " <u>@services.Desc</u> "</label>
+        </div>
+
+        <div class="mb20px" id="yeniDeger">
+            <label>Title: </label>
+            <input asp-for="_Title" type="text" name="_Title" placeholder="Please Enter the your title">
+            <br />
+            <label>Desc: </label>
+            <input asp-for="_Desc" type="text" name="_Desc" placeholder="Please enter your description">
+        </div>
+
+        <div id="confirm">
+            <input asp-page-handler="UpdateService" type="submit" id="cta" value="Confirm">
+        </div>
+    </form>
+</div>

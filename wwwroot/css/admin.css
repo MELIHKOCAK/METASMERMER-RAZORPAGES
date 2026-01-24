@@ -1,0 +1,119 @@
+﻿:root {
+    --backgroundColor: #111F35;
+    --foregroundColor: #F63049;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 280px;
+    background-color: var(--backgroundColor);
+    overflow: scroll;
+}
+
+#rightSide {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#logo {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+
+    #logo span {
+        color: red;
+    }
+
+#cta {
+    width: 95%;
+    padding: 5px;
+    margin: 10px 5px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #8A244B;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    #cta:hover {
+        background-color: #D02752;
+        cursor: pointer;
+    }
+
+    #cta:active {
+        transform: translateY(2px);
+    }
+
+u {
+    color: darkred;
+}
+
+#hamburger {
+    display: none;
+    font-size: 1rem;
+    background: var(--backgroundColor);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+
+    #hamburger {
+        display: block; /* Mobilde butonu göster */
+    }
+
+    #main {
+        flex-direction: column; /* Yan yana dizilimi boz */
+    }
+
+    #leftSide {
+        position: fixed;
+        left: -280px; /* Menüyü ekranın soluna gizle */
+        transition: 0.3s;
+        z-index: 999;
+        width: 280px;
+    }
+
+        /* JavaScript ile bu class eklendiğinde menü açılacak */
+        #leftSide.active {
+            left: 0;
+        }
+
+    #rightSide {
+        width: 90%;
+        height: 100vh;
+    }
+
+
+}

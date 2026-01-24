@@ -1,0 +1,106 @@
+﻿@{
+    Deneme.EFCORE.DenemeDbContext context = new();
+    var whatsapp = context.Whatsapp.FirstOrDefault();
+    var footer = context.Footer.FirstOrDefault();
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>@ViewData["Title"]</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="preload" href="/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/all.min.css"></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Niksarda mutfak ve balkonlarınız için özel tasarım mermerler. Niksarda yüksek kaliteli mermer tezgahlar ve balkon mermerlerinde uzman işçilik. Vefat etmiş sevdikleriniz için en iyi mezar çeşitleri burada.">
+    <meta name="keywords" content="mermer tezgah, granit mutfak tezgahı, mutfak tezgahı, balkon mermeri, mermer ustası, niksar mermer, metaş mermer, niksar metaş mermer, niksar mezar çeşitleri, kaliteli mezar çeşitleri, kaliteli işcilik, mezar, tezgah, denizlik">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Metaş Mermer">
+</head>
+<body>
+    <section id="header">
+        <div class="header container" style="background-color: white;">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <h1><span>ME</span>TAŞ <span>ME</span>RMER</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="/Index#hero" data-after="Home"><i class="fas fa-home"></i>Anasayfa</a></li>
+                        <li><a href="/Index#services" data-after="Service"><i class="fas fa-info"></i>Hİzmetler</a></li>
+                        <li><a href="/Index#about" data-after="About"><i class="fa fa-address-card" aria-hidden="true"></i>Hakkımızda</a></li>
+                        <li><a href="/Index#contact" data-after="Contact"><i class="fas fa-phone"></i>İletİŞİM</a></li>
+                        <li><a href="/Galeri" data-after="Gallery"><i class="fa fa-camera" aria-hidden="true"></i>Galerİ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="footer container">
+            <div class="brand">
+                <h1><span>ME</span>TAŞ <span>ME</span>RMER</h1>
+            </div>
+            <div class="social-icon">
+                <div class="social-item">
+                    <a href="@footer.FacebookLink" target="_blank"><img src="/img/facebook-new.svg" alt="Facebook Adresi"/></a>
+                </div>
+                <div class="social-item">
+                    <a href="@footer.InstagramLink" target="_blank"><img src="/img/instagram-new.svg" alt="Instagram Adresi"/></a>
+                </div>
+            </div>
+            <p style="color: black;">Copyright © @DateTime.Now.Year Melih Koçak</p>
+        </div>
+    </section>
+    <!-- End Footer -->
+    <!--Whatsapp Düğmesi Start-->
+    <div class="chat-container">
+        <div id="chat-popup" class="chat-popup">
+            <div class="chat-header">
+                <span>@whatsapp.Title</span>
+                <button onclick="closeChatPopup()" class="close-btn">&times;</button>
+            </div>
+            <div class="chat-body">
+                @whatsapp.Desc
+            </div>
+        </div>
+
+        <a href="https://wa.me/@whatsapp.PhoneNumber" target="_blank" class="main-chat-btn">
+            <img src="/img/WhatsApp.svg" alt="WhatsApp Numarası" />
+        </a>
+    </div>
+    <!--Whatsapp Düğmesi End-->
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 3 saniye sonra pop-up'ı göster
+    setTimeout(function() {
+        const popup = document.getElementById("chat-popup");
+        if(popup) popup.style.display = "block";
+    }, 1000);
+        });
+
+        function closeChatPopup() {
+            document.getElementById("chat-popup").style.display = "none";
+        }
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

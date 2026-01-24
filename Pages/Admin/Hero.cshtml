@@ -1,0 +1,31 @@
+﻿@page
+@model RazorPages.Deneme.Pages.Admin.HeroModel
+@{
+    var companyName = Model.context.Heros.FirstOrDefault()!.CompanyName;
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div id="content">
+    <!-- Bu Template Üzerine Diğer Sayfalarınıda 
+
+    Tasarla Unutma aynı Form etiketi İçerisinde olmalılar.-->
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Mevcut Şirket İsmi: " <u>@companyName</u> "</label>
+        </div>
+
+        <div class="mb20px" id="yeniDeger">
+            <label>Yeni Şirket İsmi: </label>
+            <input asp-for="_CompanyName" type="text" name="_CompanyName" placeholder="Şirket İsmini Giriniz...">
+        </div>
+
+        <div id="confirm">
+            <input asp-page-handler="UpdateCompanyName" type="submit" id="cta" value="ONAYLA">
+        </div>
+    </form>
+</div>
+

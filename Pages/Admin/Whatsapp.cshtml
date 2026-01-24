@@ -1,0 +1,53 @@
+﻿@page
+@model RazorPages.Deneme.Pages.Admin.WhatsappModel
+@{
+    var whatsapp = Model.context.Whatsapp.FirstOrDefault();
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <!-- Bu Template Üzerine Diğer Sayfalarınıda
+
+    Tasarla Unutma Bir Form İçerisinde olmalılar. asp-for ve asp-page-handler tag helperlarını iyi araştır -->
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Current Whatsapp Title: " <u>@whatsapp.Title</u> "</label>
+            <br />
+            <label for="">Current Whatsapp Description: " <u>@whatsapp.Desc</u> "</label>
+            <br />
+            <label for="">Current Phone Number: " <u>@whatsapp.PhoneNumber</u> "</label>
+            
+        </div>
+        <br />
+        <div class="mb20px" id="yeniDeger">
+            <label>New Whatsapp Title:</label>
+            <br />
+            <input asp-for="_NewWhatsappTitle" type="text" name="_NewWhatsappTitle" placeholder="Please enter your whatsapp message title">
+            <br />
+            <label>New Whatsapp Description:</label>
+            <br />
+            <input asp-for="_NewWhatsappDescription" type="text" name="_NewWhatsappDescription" placeholder="Please enter your whatsapp description">
+            <br />
+            <label>New Whatsapp Phone Number:</label>
+            <br />
+            <input asp-for="_NewWhatsappPhoneNumber" type="text" name="_NewWhatsappPhoneNumber" placeholder="Please enter your whatsapp phone number with area code. Like a 905374480024">
+        </div>
+
+        <div id="confirm">
+            <input asp-page-handler="UpdateWhatsapp" type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>
+

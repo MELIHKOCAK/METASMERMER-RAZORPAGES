@@ -1,0 +1,30 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+<style>
+    #main{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+</style>
+<div id="main">
+
+    <h1 class="text-danger">Hata</h1>
+    <br />
+    <h2 class="text-danger">İsteğiniz İşlenirken Bir Hata Meydana Geldi.</h2>
+    <br />
+
+
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+</div>

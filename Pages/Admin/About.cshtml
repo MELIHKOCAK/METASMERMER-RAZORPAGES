@@ -1,0 +1,58 @@
+﻿@page
+@model RazorPages.Deneme.Pages.Admin.AboutModel
+@{
+    var about = Model.context.About.FirstOrDefault();
+}
+
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <!-- Bu Template Üzerine Diğer Sayfalarınıda
+
+    Tasarla Unutma Bir Form İçerisinde olmalılar. asp-for ve asp-page-handler tag helperlarını iyi araştır -->
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label>Current Image:</label>
+            <div style="display: flex; flex-direction:column; align-items:center; justify-content:center;">
+                <img style="border:solid 1px red;" src="@about.ImageLink" alt="mevcutFotoğraf" width="15%" height="15%" />
+            </div>
+            <br />
+            <label for="">Current Title: " <u>@about.Title</u> "</label>
+            <br/>
+            <label for="">Current Desc: " <u>@about.Desc</u> "</label>
+        </div>
+        <hr class="mb20px" />
+        <div class="mb20px" id="yeniDeger">
+            <label>New Image: </label>
+            <br />
+            <select asp-for="SelectedImage"
+                    asp-items="Model.ImageList">
+                <option value="">Seçiniz</option>
+            </select>
+            <br />
+            <label>New Title: </label>
+            <br />
+            <input asp-for="_NewTitle" type="text" name="_NewTitle" placeholder="Please Enter Your Title">
+            <br />
+            <label>New Description: </label>
+            <br />
+            <input asp-for="_NewDesc" type="text" name="_NewDesc" placeholder="Please Enter Your Description">
+        </div>
+         <hr class="mb20px" />
+        <div id="confirm">
+            <input asp-page-handler="UpdateAbout" type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>
