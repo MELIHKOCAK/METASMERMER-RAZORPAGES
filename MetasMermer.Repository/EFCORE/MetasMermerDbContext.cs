@@ -6,8 +6,9 @@ using System.Reflection;
 
 namespace MetasMermer.Repositories.EFCORE
 {
-    public class MetasMermerDbContext : DbContext
+    public class MetasMermerDbContext(DbContextOptions<MetasMermerDbContext> options) : DbContext(options)
     {
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             Assembly.GetExecutingAssembly()
@@ -16,8 +17,7 @@ namespace MetasMermer.Repositories.EFCORE
                     .ToList()
                     .ForEach(type => modelBuilder.Entity(type));
 
-            
-
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MetasMermerDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
     }
