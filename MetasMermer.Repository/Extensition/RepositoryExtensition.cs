@@ -18,6 +18,7 @@ public static class RepositoryExtensition
         
         service.AddScoped<IGalleryRepository, GalleryRepository>(); 
         service.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        service.AddScoped<IUnitOfWork, UnitOfWork>();
         return service;
     }
 }
