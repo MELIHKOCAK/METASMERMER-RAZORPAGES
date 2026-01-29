@@ -10,7 +10,7 @@ namespace MetasMermer.UI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddRepositoryConfiguration(builder.Configuration);
-            
+
             // Add services to the container.
             builder.Services.AddRazorPages();
 

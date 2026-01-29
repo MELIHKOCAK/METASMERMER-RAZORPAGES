@@ -1,5 +1,6 @@
 ﻿using MetasMermer.Repositories.EFCORE;
 using MetasMermer.Repositories.EFCORE.Galleries;
+using MetasMermer.Repositories.Gallery;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
