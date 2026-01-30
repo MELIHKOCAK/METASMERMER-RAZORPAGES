@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MetasMermer.Repositories.EFCORE.Services;
+namespace MetasMermer.Repositories.EFCORE.Solutions;
 
-public class ServiceConfig : IEntityTypeConfiguration<Service>
+public class SolutionConfig : IEntityTypeConfiguration<Solution>
 {
-    public void Configure(EntityTypeBuilder<Service> builder)
+    public void Configure(EntityTypeBuilder<Solution> builder)
     {
         builder.HasData
             (
-                new Service
+                new Solution
                 {
                     Id = 1, Title = "Hizmetlerimiz", 
                     Description = " Metaş mermer ve granit sanayii olarak her türlü • Mutfak Tezgahı • Denizlik • Basamak • Mezar işleriniz itina ile yapılır."

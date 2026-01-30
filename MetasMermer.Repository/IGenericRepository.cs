@@ -1,6 +1,6 @@
 ﻿namespace MetasMermer.Repositories;
 
-public interface IGenericRepository<T> where T: class
+public interface IGenericRepository<T> where T : class
 {
     /*
      Genellikle Repository patterni uygularken generic kısmında tüm crud işlemleri bulunur.

@@ -1,6 +1,6 @@
-﻿namespace MetasMermer.Repositories.EFCORE.Services;
+﻿namespace MetasMermer.Repositories.EFCORE.Solutions;
 
-public class Service:BaseEntity<int>
+public class Solution:BaseEntity<int>
 {
     public string Title { get; set; } = default!;
     public string Description { get; set; } = default!;
