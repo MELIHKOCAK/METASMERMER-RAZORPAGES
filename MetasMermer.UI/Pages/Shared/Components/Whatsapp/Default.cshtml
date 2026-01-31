@@ -1,0 +1,33 @@
+﻿@model MetasMermer.Services.Whatsapps.WhatsappDto
+
+  <!--Whatsapp Düğmesi Başlangıç-->
+<div class="chat-container">
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <span>@Model.Title</span>
+            <button onclick="closeChatPopup()" class="close-btn">&times;</button>
+        </div>
+        <div class="chat-body">
+            @Model.Description
+        </div>
+    </div>
+
+    <a href="https://wa.me/@Model.PhoneNumber" target="_blank" class="main-chat-btn">
+        <img src="/img/WhatsApp.svg" alt="WhatsApp Numarası" />
+    </a>
+</div>
+<!--Whatsapp Düğmesi Son-->
+<!--Javascript Başlangıç-->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // 3 saniye sonra pop-up'ı göster
+    setTimeout(function() {
+        const popup = document.getElementById("chat-popup");
+        if(popup) popup.style.display = "block";
+    }, 1000);
+        });
+
+        function closeChatPopup() {
+            document.getElementById("chat-popup").style.display = "none";
+        }
+</script>

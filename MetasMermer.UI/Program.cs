@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using MetasMermer.Repositories.EFCORE;
 using MetasMermer.Repositories.Extensition;
 using MetasMermer.Services;
+using MetasMermer.Services.Extensition;
 
 namespace MetasMermer.UI
 {
@@ -13,7 +14,7 @@ namespace MetasMermer.UI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddRepositoryConfiguration(builder.Configuration);
-
+            builder.Services.AddServiceExtensition();
             builder.Services.AddValidatorsFromAssemblyContaining<ServiceAssembly>();
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddFluentValidationClientsideAdapters();
