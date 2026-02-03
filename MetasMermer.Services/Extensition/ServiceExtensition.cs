@@ -1,4 +1,6 @@
 ﻿using MetasMermer.Services.Footers;
+using MetasMermer.Services.Heroes;
+using MetasMermer.Services.Solutions;
 using MetasMermer.Services.Whatsapps;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +12,8 @@ namespace MetasMermer.Services.Extensition
         {
             services.AddScoped<IWhatsappService, WhatsappService>();
             services.AddScoped<IFooterService, FooterService>();
+            services.AddScoped<ISolutionService, SolutionService>();
+            services.AddScoped<IHeroService, HeroService>();
             return services;
         }
     }
