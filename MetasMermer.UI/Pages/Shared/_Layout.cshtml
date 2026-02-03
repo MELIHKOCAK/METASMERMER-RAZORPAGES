@@ -28,6 +28,57 @@
 
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+
+        /*Slider Başlangıç*/
+        document.querySelectorAll(".img-slider").forEach((slider, sliderIndex) => {
+
+            const slides = slider.querySelectorAll(".slide");
+            const btns = slider.querySelectorAll(".btn");
+
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            const SLIDE_TIME = 10000;              // 10 saniye
+            const START_DELAY = sliderIndex * 2000; // Her slider 2 sn geç başlar
+
+            function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            btns.forEach(btn => btn.classList.remove("active"));
+
+            slides[index].classList.add("active");
+            btns[index].classList.add("active");
+
+            currentSlide = index;
+            }
+
+            function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                let next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }, SLIDE_TIME);
+            }
+
+            function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+            }
+
+            // Manuel kontrol → süre sıfırlanır
+            btns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                stopAutoSlide();
+                showSlide(index);
+                startAutoSlide();
+            });
+            });
+
+            setTimeout(() => {
+            startAutoSlide();
+            }, START_DELAY);
+
+        });
+        /*Slider Bitiş*/
+    </script>
     <!--Javascript Son-->
 
 </body>
