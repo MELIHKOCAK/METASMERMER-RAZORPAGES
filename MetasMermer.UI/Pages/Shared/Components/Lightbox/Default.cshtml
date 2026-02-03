@@ -1,0 +1,14 @@
+﻿@model List<MetasMermer.Services.Galleries.GalleryDto>
+
+@foreach (var item in Model.ToList())
+{
+    <div class="item" style="height: 370px;">
+        <picture>
+            <source srcset="@item.ImageLink" type="image/webp">
+            <a href="@item.ImageLink"
+               data-lightbox="photos">
+                <img class="img-fluid img" style="height: 100%;" src="@item.ImageLink">
+            </a>
+        </picture>
+    </div>
+}
