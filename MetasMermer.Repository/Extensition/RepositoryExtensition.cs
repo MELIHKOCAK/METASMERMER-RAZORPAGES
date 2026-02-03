@@ -1,4 +1,5 @@
 ﻿using MetasMermer.Repositories.EFCORE;
+using MetasMermer.Repositories.EFCORE.Contacts;
 using MetasMermer.Repositories.EFCORE.Galleries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,7 @@ public static class RepositoryExtensition
         });
         
         service.AddScoped<IGalleryRepository, GalleryRepository>(); 
+        service.AddScoped<IContactRepository, ContactRepository>(); 
         service.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         service.AddScoped<IUnitOfWork, UnitOfWork>();
         return service;

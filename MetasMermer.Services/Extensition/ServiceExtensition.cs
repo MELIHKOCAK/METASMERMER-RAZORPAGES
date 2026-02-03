@@ -1,4 +1,5 @@
 ﻿using MetasMermer.Services.Abouts;
+using MetasMermer.Services.Contacts;
 using MetasMermer.Services.Footers;
 using MetasMermer.Services.Heroes;
 using MetasMermer.Services.Solutions;
@@ -16,6 +17,7 @@ namespace MetasMermer.Services.Extensition
             services.AddScoped<ISolutionService, SolutionService>();
             services.AddScoped<IHeroService, HeroService>();
             services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IContactService, ContactService>();
             return services;
         }
     }
