@@ -2,7 +2,7 @@
 
 public class About : BaseEntity<int>
 {
-    public string ImageLink { get; set; } = default!;
+    public List<string> ImageLink { get; set; } = default!;
     public string Title { get; set; } = default!;
     public string Description { get; set; } = default!;
 }

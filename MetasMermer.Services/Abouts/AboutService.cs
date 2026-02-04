@@ -2,6 +2,7 @@
 using MetasMermer.Repositories;
 using MetasMermer.Repositories.EFCORE.Abouts;
 using MetasMermer.Services.Abouts.Update;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MetasMermer.Services.Abouts;
 
@@ -12,19 +13,28 @@ public class AboutService(IGenericRepository<About> _repository, IUnitOfWork _un
         var about = await _repository.GetByIdAsync(id);
 
         if (about is null)
-            return new AboutDto { Title = "Null", Description = "Null", ImageLink = "Null" };
+            return new AboutDto { Title = "Null", Description = "Null", ImageLink = null };
 
         return about.Adapt<AboutDto>();
     }
 
-    public async Task<AboutDto> Update(UpdateAboutDto updateAboutDto)
+    public async Task<AboutDto> Update(UpdateAboutDto updateAboutDto, string newImageUrl, List<SelectListItem> selectListItems)
     {
         var about = await _repository.GetByIdAsync(updateAboutDto.Id);
 
         if (about is null)
-            return new AboutDto { Title = "Null", Description = "Null", ImageLink = "Null" };
+            return new AboutDto { Title = "Null", Description = "Null", ImageLink = null }; //fast fail yaklaşımı
 
-        about.ImageLink = updateAboutDto.ImageLink;
+        int imageUrl = Convert.ToInt32(newImageUrl);
+
+        for (int i = 0; i < selectListItems.Count; i++)
+        {
+            about.ImageLink[i] = selectListItems[i].Text;
+        }
+
+        var newImageString = about.ImageLink[imageUrl].ToString();
+        about.ImageLink[imageUrl] = about.ImageLink[0].ToString();
+        about.ImageLink[0] = newImageString;
         about.Description = updateAboutDto.Description;
         about.Title=updateAboutDto.Title;
 

@@ -21,7 +21,7 @@
         <div class="mb20px" id="mevcutDeger">
             <label>Current Image:</label>
             <div style="display: flex; flex-direction:column; align-items:center; justify-content:center;">
-                <img style="border:solid 1px red;" src="@Model._aboutDto.ImageLink" alt="mevcutFotoğraf" width="15%" height="15%" />
+                <img style="border:solid 1px red;" src="@Model._aboutDto.ImageLink[0].ToString()" alt="mevcutFotoğraf" width="15%" height="15%" />
             </div>
             <br />
             <label for="">Current Title: " <u>@Model._aboutDto.Title</u> "</label>
@@ -30,6 +30,13 @@
         </div>
         <hr class="mb20px" />
         <div class="mb20px" id="yeniDeger">
+            <label>New Title: </label>
+            <br />
+            <select asp-for="SelectedImage"
+                    asp-items="@Model.ImageList">
+                <option value="">Seçiniz</option>
+            </select>
+            <br />
             <label>New Title: </label>
             <br />
             <input asp-for="@Model.UpdateAboutDto.Title" type="text" placeholder="Please Enter Your Title">

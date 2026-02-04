@@ -12,7 +12,11 @@ namespace MetasMermer.Repositories.EFCORE.Abouts
                     new About
                     {
                         Id = 1,
-                        ImageLink = "/img/hero.webp",
+                        ImageLink = new List<string>
+                        {
+                            "/img/hero.webp",
+                            "/img/kursat.webp"
+                        },
                         Title = "Her Zaman Kalite",
                         Description = "2007 Yılında Tokat'ın Niksar ilçesinde sanayi bölgesinde kurulan \"Metaş Mermer Ve Granit Sanayii kalitesini\" geliştirerek siz değerli müşterilerimize hizmet vermeye devam etmektedir.."
                     }
