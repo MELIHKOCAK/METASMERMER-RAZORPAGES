@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetasMermer.Services.Heroes.Update;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace MetasMermer.Services.Heroes
     public interface IHeroService
     {
         Task<HeroDto> GetByIdAsync(int id);
+        Task<HeroDto> Update(UpdateHeroDto updateHeroDto);
     }
 }

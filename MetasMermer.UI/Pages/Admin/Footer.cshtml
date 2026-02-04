@@ -1,0 +1,43 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.FooterModel
+@{
+
+}
+
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Current Facebook Link: " <a href="@Model._footerDto.FacebookLink"><u>@Model._footerDto.FacebookLink</u></a> "</label>
+            <br />
+            <label for="">Current Instagram Link: " <a href="@Model._footerDto.InstagramLink"><u>@Model._footerDto.InstagramLink</u></a> "</label>
+        </div>
+        <br />
+        <div class="mb20px" id="yeniDeger">
+            <label>New Facebook Link: </label>
+            <br />
+            <input asp-for="@Model.UpdateFooterDto.FacebookLink" type="text" placeholder="Please enter your facebook link">
+            <br />
+            <label>New Instagram Link: </label>
+            <br />
+            <input asp-for="@Model.UpdateFooterDto.InstagramLink" type="text" placeholder="Please enter your instagram link">
+        </div>
+
+        <div id="confirm">
+            <input type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>

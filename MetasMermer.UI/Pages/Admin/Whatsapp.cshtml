@@ -1,0 +1,48 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.WhatsappModel
+@{
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Current Whatsapp Title: " <u>@Model._whatsappDto.Title</u> "</label>
+            <br />
+            <label for="">Current Whatsapp Description: " <u>@Model._whatsappDto.Description</u> "</label>
+            <br />
+            <label for="">Current Phone Number: " <u>@Model._whatsappDto.PhoneNumber</u> "</label>
+        </div>
+        <br />
+        <div class="mb20px" id="yeniDeger">
+            <label>New Whatsapp Title:</label>
+            <br />
+            <input asp-for="@Model.UpdateWhatsappDto.Title" type="text" placeholder="Please enter your whatsapp message title">
+            <br />
+            <label>New Whatsapp Description:</label>
+            <br />
+            <input asp-for="@Model.UpdateWhatsappDto.Description" type="text" placeholder="Please enter your whatsapp description">
+            <br />
+            <label>New Whatsapp Phone Number:</label>
+            <br />
+            <input asp-for="@Model.UpdateWhatsappDto.PhoneNumber" type="text"  placeholder="Please enter your whatsapp phone number with area code. Like a 905374480024">
+        </div>
+
+        <div id="confirm">
+            <input type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.HeroModel
+@{
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div id="content">
+    <!-- Bu Template Üzerine Diğer Sayfalarınıda
+
+    Tasarla Unutma aynı Form etiketi İçerisinde olmalılar.-->
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Mevcut Şirket İsmi: " <u>@Model._Hero.CompanyName</u> "</label>
+        </div>
+
+        <div class="mb20px" id="yeniDeger">
+            <label>Yeni Şirket İsmi: </label>
+            <input asp-for="Hero.CompanyName" type="text" placeholder="Şirket İsmini Giriniz...">
+        </div>
+
+        <div id="confirm">
+            <input  type="submit" id="cta" value="ONAYLA">
+        </div>
+    </form>
+</div>
+

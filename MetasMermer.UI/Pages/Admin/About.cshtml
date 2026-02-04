@@ -1,0 +1,46 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.AboutModel
+@{
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label>Current Image:</label>
+            <div style="display: flex; flex-direction:column; align-items:center; justify-content:center;">
+                <img style="border:solid 1px red;" src="@Model._aboutDto.ImageLink" alt="mevcutFotoğraf" width="15%" height="15%" />
+            </div>
+            <br />
+            <label for="">Current Title: " <u>@Model._aboutDto.Title</u> "</label>
+            <br />
+            <label for="">Current Desc: " <u>@Model._aboutDto.Description</u> "</label>
+        </div>
+        <hr class="mb20px" />
+        <div class="mb20px" id="yeniDeger">
+            <label>New Title: </label>
+            <br />
+            <input asp-for="@Model.UpdateAboutDto.Title" type="text" placeholder="Please Enter Your Title">
+            <br />
+            <label>New Description: </label>
+            <br />
+            <input asp-for="@Model.UpdateAboutDto.Description" type="text" placeholder="Please Enter Your Description">
+        </div>
+        <hr class="mb20px" />
+        <div id="confirm">
+            <input type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>
