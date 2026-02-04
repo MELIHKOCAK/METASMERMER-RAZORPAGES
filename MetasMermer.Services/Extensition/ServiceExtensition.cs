@@ -4,6 +4,7 @@ using MetasMermer.Services.Footers;
 using MetasMermer.Services.Galleries;
 using MetasMermer.Services.Heroes;
 using MetasMermer.Services.Solutions;
+using MetasMermer.Services.Users;
 using MetasMermer.Services.Whatsapps;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +21,7 @@ namespace MetasMermer.Services.Extensition
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IGalleryService, GalleryService>();
+            services.AddScoped<IUserService, UserService>();
             return services;
         }
     }

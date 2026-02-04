@@ -13,6 +13,31 @@ namespace MetasMermer.UI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Add services to the container.
+            builder.Services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Admin", "AdminPolicy");
+                options.Conventions.AllowAnonymousToPage("/Admin/Index");
+            });
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminPolicy",
+                    policy => policy.RequireRole("Admin"));
+            });
+
+
+
+            builder.Services.AddAuthentication("Cookies")
+                            .AddCookie("Cookies", options =>
+                            {
+                                options.LoginPath = "/Admin/Index";
+                                options.AccessDeniedPath = "/Error";
+                            });
+
+
+
+
             builder.Services.AddRepositoryConfiguration(builder.Configuration);
             builder.Services.AddServiceExtensition();
             builder.Services.AddValidatorsFromAssemblyContaining<ServiceAssembly>();

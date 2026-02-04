@@ -1,0 +1,91 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.IndexModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="/css/admin.css" rel="stylesheet" />
+    <style>
+        html {
+            background-color: black;
+        }
+
+        #main {
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login {
+            padding: 20px;
+            display: grid;
+            background-color: var(--backgroundColor);
+            width: 300px;
+            height: 45%;
+            border-radius: 3%;
+        }
+
+        .cta {
+            text-transform: uppercase;
+            color: var(--foregroundColor);
+        }
+
+        #loginText {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.5rem;
+        }
+
+        #loginButton {
+            width: 100%;
+            padding: 5px;
+            font-size: 1.3rem;
+            color: white;
+            background-color: #8A244B;
+            outline: none;
+            border: none;
+            box-shadow: 0 0 5px var(--foregroundColor), 0 0 15px var(--foregroundColor), 0 0 30px var(--foregroundColor);
+            transition: 0.3s;
+            border-radius: 5px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+            #loginButton:hover {
+                background-color: #D02752;
+                cursor: pointer;
+            }
+
+            #loginButton:active {
+                transform: translateY(2px);
+            }
+
+        form {
+            display: contents;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="login">
+            <form method="post">
+                <h2 id="loginText" class="cta">LOGIN</h2>
+                <label class="cta">Username:</label>
+                <input type="text" name="User.UserName">
+                <br>
+                <label class="cta" id="labelPassword">Password:</label>
+                <input type="password" name="User.Password" id="">
+                <br>
+                <input id="loginButton" type="submit" value="LOGIN">
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
