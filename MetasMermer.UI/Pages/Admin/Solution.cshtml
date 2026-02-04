@@ -1,0 +1,44 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.SolutionModel
+@{
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    #yeniDeger {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        width: 95%;
+    }
+</style>
+
+<div id="content">
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Title: " <u>@Model._solutionDto.Title</u> "</label>
+            <br />
+            <label for="">Desc: " <u>@Model._solutionDto.Description</u> "</label>
+        </div>
+
+        <div class="mb20px" id="yeniDeger">
+            <label>Title: </label>
+            <input asp-for="@Model.UpdateSolutionDto.Title" type="text" placeholder="Please Enter the your title">
+            <br />
+            <label>Desc: </label>
+            <input asp-for="@Model.UpdateSolutionDto.Description" type="text" placeholder="Please enter your description">
+        </div>
+
+        <div id="confirm">
+            <input type="submit" id="cta" value="Confirm">
+        </div>
+    </form>
+</div>

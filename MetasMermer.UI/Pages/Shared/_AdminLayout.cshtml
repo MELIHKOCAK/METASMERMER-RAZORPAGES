@@ -40,7 +40,7 @@
             <form action="/" method="get">
                 <input asp-page="/Admin/Dashboard" id="cta" type="submit" value="HOMEPAGE">
                 <input asp-page="/Admin/Hero" id="cta" type="submit" value="HERO">
-                <input asp-page="/Admin/Services" id="cta" type="submit" value="SERVICE">
+                <input asp-page="/Admin/Solution" id="cta" type="submit" value="SOLUTIONS">
                 <input asp-page="/Admin/About" id="cta" type="submit" value="ABOUT">
                 <input asp-page="/Admin/Contact" id="cta" type="submit" value="CONTACT">
                 <input asp-page="/Admin/Footer" id="cta" type="submit" value="FOOTER">
@@ -55,7 +55,7 @@
 
             </form>
 
-            <form method="post" asp-page="/Admin/Logout">
+            <form method="get" asp-page="/Admin/Logout">
                 <input id="cta" type="submit" value="LOGOUT">
             </form>
         </div>
