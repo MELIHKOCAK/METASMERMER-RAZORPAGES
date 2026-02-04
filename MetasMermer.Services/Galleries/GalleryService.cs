@@ -2,19 +2,17 @@
 using MetasMermer.Repositories;
 using MetasMermer.Repositories.EFCORE.Galleries;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
+using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace MetasMermer.Services.Galleries;
 
 public class GalleryService(IGalleryRepository _repository, IUnitOfWork _unitOfWork) : IGalleryService
 {
-    public void Add(Gallery gallery)
-    {
-        _repository.Add(gallery);
-        _unitOfWork.SaveChangeAsync();
-    }
 
-    public async Task Add(IFormFile Photo)
+    public async Task<string> Add(IFormFile Photo)
     {
         var fileName = $"{Guid.NewGuid()}{Path.GetExtension(Photo.FileName)}";
         var uploadFolder = @".\wwwroot\img\gallery";
@@ -23,17 +21,32 @@ public class GalleryService(IGalleryRepository _repository, IUnitOfWork _unitOfW
         using var stream = new FileStream(filePath, FileMode.Create);
         await Photo.CopyToAsync(stream);
 
-        var gallery = new Gallery { ImageLink = filePath };
+        var gallery = new Gallery { ImageLink = "/img/gallery/" + fileName };
 
         await _repository.Add(gallery);
         await _unitOfWork.SaveChangeAsync();
+        return gallery.ImageLink;
+
     }
 
-    public async Task Delete(int id)
+    public async Task Delete(List<int> selectedPhotosIds)
     {
-        var gallery = await _repository.GetByIdAsync(id);
-        _repository.Delete(gallery.Id);
-        await _unitOfWork.SaveChangeAsync();
+        // Checkboxlar boşsa Fast Fail
+        if (selectedPhotosIds == null || !selectedPhotosIds.Any())
+            return;
+
+        foreach (var id in selectedPhotosIds)
+        {
+            var photo = await _repository.GetByIdAsync(id); // DB'den çek
+
+            var dummyPhoto = photo.Adapt<Gallery>();
+            if (dummyPhoto != null)
+            {
+
+                _repository.Delete(dummyPhoto.Id);
+                await _unitOfWork.SaveChangeAsync();
+            }
+        }
     }
 
     public async Task<List<GalleryDto>> GetAll()

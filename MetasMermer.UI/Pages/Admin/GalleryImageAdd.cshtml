@@ -1,0 +1,19 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.GalleryImageAddModel
+@{
+}
+<style>
+    .gallery-form {
+        display: contents;
+    }
+</style>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/*" asp-for="Photo">
+    <button id="cta" type="submit">Upload</button>
+</form>
+
+@if (TempData["UploadedPath"] != null)
+{
+    <img src="@TempData["UploadedPath"]" width="20%" height="20%" />
+}

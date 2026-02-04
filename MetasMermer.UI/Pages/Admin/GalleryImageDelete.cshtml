@@ -1,0 +1,50 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.GalleryImageDeleteModel
+@{
+}
+<style>
+    #galleryContainer {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        height: 100%;
+        width: 100%;
+        row-gap: 50px;
+        column-gap: 10px;
+        padding: 20px;
+        overflow: scroll;
+        justify-items: center;
+    }
+
+    img {
+        border: solid 1px red;
+    }
+
+    .gallery-form {
+        display: contents;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+<form method="post" class="gallery-form">
+    <div id="galleryContainer">
+        @foreach (var item in Model.GalleryList)
+        {
+            <div class="item">
+                <source srcset="@item.ImageLink" type="image/webp">
+                <a href="@item.ImageLink"
+                   data-lightbox="photos">
+                    <img height="150px" width="150px" src="@item.ImageLink">
+                </a>
+                <br />
+
+                <input name="SelectedPhotoIds" value="@item.Id" type="checkbox">
+                <label style="font-size: 16px;" for="confirm">Silmek İstiyorum</label>
+            </div>
+        }
+    </div>
+
+    <input asp-page-handler="DeletePhoto" type="submit" id="cta" value="ONAYLA">
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>

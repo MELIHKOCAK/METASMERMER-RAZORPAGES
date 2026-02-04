@@ -6,6 +6,6 @@ namespace MetasMermer.Services.Galleries;
 public interface IGalleryService
 {
     Task<List<GalleryDto>> GetAll();
-    Task Add(IFormFile Photo);
-    Task Delete(int id);
+    Task<string> Add(IFormFile Photo);
+    Task Delete(List<int> selectedPhotoIds);
 }
