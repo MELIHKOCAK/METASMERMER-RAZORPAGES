@@ -48,7 +48,7 @@
 }
 
 html {
-    font-size: 10px;
+    font-size: 62.5%;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Yatay taşmayı zorla gizle */
@@ -72,7 +72,7 @@ img {
 
 p {
     color: black;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-top: 5px;
     line-height: 2.5rem;
     font-weight: 300;
@@ -98,7 +98,7 @@ p {
 
 /* Başlıklar */
 .section-title {
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 300;
     color: black;
     margin-bottom: 60px;
@@ -333,23 +333,6 @@ p {
             border-radius: 5px;
         }
 
-        .img-slider .slide .info h2 {
-            color: #fff;
-            font-size: 45px;
-            text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .img-slider .slide .info p {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.1);
-            font-size: 16px;
-            width: 60%;
-            padding: 10px;
-            border-radius: 4px;
-        }
-
     .img-slider .navigation {
         z-index: 2;
         position: absolute;
@@ -540,7 +523,7 @@ p {
 }
 
     #about .col-right h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 500;
         letter-spacing: .2rem;
         margin-bottom: 10px;
@@ -656,7 +639,7 @@ p {
 
 #footer p {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
 }
 
 .photos-container {
@@ -724,7 +707,7 @@ p {
 
     /* Hero */
     #hero h1 {
-        font-size: 7rem;
+        font-size: 6rem;
     }
 
     /* Services */
@@ -837,7 +820,7 @@ p {
 
     /* Yazı boyutlarını tablet/desktop için biraz dengeleyelim */
     #contact .contact-info h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 5px;
     }
 
@@ -870,7 +853,7 @@ p {
         }
 
             #header .nav-list ul li a {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
         #header .nav-list ul a:after {
@@ -900,7 +883,7 @@ p {
     }
 
         #projects .project-item .project-info h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
 
         #projects .project-item .project-info p {
@@ -917,7 +900,7 @@ p {
     }
 
         #projects .project-item .project-info h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
 
         #projects .project-item .project-info p {
@@ -934,17 +917,17 @@ p {
     }
 
         #projects .project-item .project-info h1 {
-            font-size: 2.7rem;
+            font-size: 2.5rem;
         }
 
         #projects .project-item .project-info p {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
         }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 982px) {
     #contact .contact-item .contact-info h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -959,7 +942,7 @@ p {
 @media only screen and (max-width: 767px) {
     .photo-gallery h2 {
         margin-bottom: 25px;
-        font-size: 24px;
+        font-size: 2.5rem;
     }
 
     .photos-container {
@@ -1041,7 +1024,7 @@ p {
 
 @media (max-width: 350px) {
     h1.section-title {
-        font-size: 3.3rem;
+        font-size: 3rem;
     }
 }
 
@@ -1054,8 +1037,6 @@ p {
         .img-slider .navigation {
             bottom: 10px;
         }
-
- 
 }
 
 .chat-container {
@@ -1065,7 +1046,6 @@ p {
     z-index: 9999;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 /* Pop-up Stil */
 .chat-popup {
@@ -1088,7 +1068,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 
@@ -1096,27 +1076,15 @@ p {
     background: none;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 2rem;
     cursor: pointer;
 }
 
 .chat-body {
     padding: 15px;
-    font-size: 14px;
+    font-size: 1.6rem;
     color: #333;
     line-height: 1.4;
-}
-
-/* Küçük ok işareti */
-.chat-arrow {
-    position: absolute;
-    bottom: -10px;
-    right: 20px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid white;
 }
 
 /* Ana Buton Stil */
