@@ -1,5 +1,4 @@
-﻿
-/* =========================================
+﻿/* =========================================
    1. GENEL AYARLAR & RESET
    ========================================= */
 @font-face {
@@ -41,7 +40,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 
 * {
     padding: 0;
@@ -159,11 +157,10 @@ p {
 
     #header .header {
         min-height: 8vh;
-        background-color: #1D3692;
-        transition: .3s ease background-color;
+        transition: .5s ease background-color;
     }
 
-    #header .nav-bar {
+    .header .nav-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -173,7 +170,7 @@ p {
         padding: 0 10px;
     }
 
-    #header .nav-list ul {
+    .header .nav-list ul {
         list-style: none;
         position: absolute;
         background-color: white;
@@ -185,16 +182,14 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 1;
-        overflow-x: hidden;
         transition: .5s ease left;
     }
 
-        #header .nav-list ul.active {
+        .header .nav-list ul.active {
             left: 0%;
         }
 
-        #header .nav-list ul a {
+        .header .nav-list ul a {
             font-size: 2.5rem;
             font-weight: 500;
             letter-spacing: .2rem;
@@ -205,7 +200,7 @@ p {
             display: block;
         }
 
-            #header .nav-list ul a::after {
+            .header .nav-list ul a::after {
                 content: attr(data-after);
                 position: absolute;
                 top: 50%;
@@ -218,12 +213,12 @@ p {
                 transition: .3s ease letter-spacing;
             }
 
-        #header .nav-list ul li:hover a::after {
+        .header .nav-list ul li:hover a::after {
             transform: translate(-50%, -50%) scale(1);
             letter-spacing: initial;
         }
 
-        #header .nav-list ul li:hover a {
+        .header .nav-list ul li:hover a {
             color: #ff0b0b;
         }
 
@@ -299,7 +294,7 @@ p {
     width: 800px;
     height: 500px;
     margin: 10px;
-    background: #1D212B;
+    background: #000000;
     overflow: hidden;
 }
 
@@ -316,7 +311,6 @@ p {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
 
-     
         .img-slider .slide .info {
             position: absolute;
             top: 0;
@@ -366,7 +360,7 @@ p {
     }
 
         .img-slider .navigation .btn {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255);
             width: 12px;
             height: 12px;
             margin: 10px;
@@ -374,7 +368,13 @@ p {
             cursor: pointer;
             transition: 0.3s ease;
         }
-
+                /*Bu seçici şunu diyor; 
+                    img-slider sınıfının içinde
+                    navigation sınıfın içinde
+                    btn sınıfı ve active sınıfı aynı anda bulunursa
+                    süslü parantezler içindeki nitelikleri uygula
+                    ".btn.active" --> aynı anda bulunursa demek
+                */
             .img-slider .navigation .btn.active {
                 background: #ff0b0b;
                 box-shadow: 0 0 5px rgba(255, 11, 11, 0.5);
@@ -469,71 +469,11 @@ p {
     margin: 0 auto;
 }
 
-#services .service-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-#services .service-item {
-    flex-basis: 80%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-    border-radius: 10px;
-    background-image: linear-gradient(60deg, #fbfdff 0%, #93c7ff 100%);
-    background-size: cover;
-    margin: 10px 5%;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-    #services .service-item::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 70%;
-        width: 100%;
-        background-image: linear-gradient(60deg, #00408a 0%, #c0dfff 100%);
-        opacity: .9;
-        z-index: -1;
-    }
-
-#services .service-bottom .icon {
-    height: 80px;
-    width: 80px;
-    margin-bottom: 20px;
-}
-
-#services .service-item h2 {
-    font-size: 2rem;
-    color: #d60000;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    -webkit-text-stroke-width: 0.00000001px;
-    -webkit-text-stroke-color: white;
-}
-
-#services .service-item p {
-    color: white;
-    text-align: left;
-}
-
 /* Projects Section */
 #projects .projects {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-#projects .projects-header h1 {
-    margin-bottom: 50px;
 }
 
 #projects .all-projects {
@@ -562,47 +502,24 @@ p {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(65deg, #d60000 0%, #000000 110%);
+    background-image: linear-gradient(65deg, #ff0b0b 0%, #000000 110%);
     color: white;
 }
 
+    /*  Bu kısım Mezar, Denizlik yazan yeri değiştiriliyor ama h1 etiketi
+        Seo açısından sıkıntılı o yüzden değiştirilecek
+    */
     #projects .project-info h1 {
         font-size: 4rem;
         font-weight: 500;
         color: #fff;
         -webkit-text-stroke-width: .1px;
-        -webkit-text-stroke-color: red;
+        -webkit-text-stroke-color: #ff0b0b  ;
     }
 
     #projects .project-info p {
         color: white;
     }
-
-#projects .project-img {
-    flex-basis: 50%;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-
-    #projects .project-img:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background-image: linear-gradient(60deg, #d60000 0%, #d60000 100%);
-        opacity: .7;
-    }
-
-    #projects .project-img img {
-        transition: .3s ease transform;
-    }
-
-#projects .project-item:hover .project-img img {
-    transform: scale(1.1);
-}
 
 /* About Section */
 #about .about {
@@ -646,7 +563,7 @@ p {
     position: relative;
     border: 10px solid white;
 }
-
+        /*Kaymış Çerçeveyi veriyor*/
     #about .col-left .about-img::after {
         content: '';
         position: absolute;
@@ -654,7 +571,7 @@ p {
         top: 19px;
         height: 98%;
         width: 98%;
-        border: 7px solid crimson;
+        border: 7px solid #ff0b0b;
         z-index: -1;
     }
 
@@ -664,7 +581,9 @@ p {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* İsimlendirmeleri Düzelt Contant İtems ve Contanct İtem aynı
+   şey zannediliyor.
+*/
 #contact .contact-items {
     width: 100%; 
     max-width: 98vw; 
@@ -715,15 +634,6 @@ p {
     padding-bottom: 10px;
 }
 
-#footer h2 {
-    color: #ff0b0b;
-    font-weight: 500;
-    font-size: 1.8rem;
-    letter-spacing: .1rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 #footer .social-icon {
     display: flex;
     margin-bottom: 30px;
@@ -756,17 +666,6 @@ p {
     justify-content: center;
 }
 
-.item {
-    padding: 5px;
-    border: 2px solid #ff0b0b;
-    border-radius: 5px;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-    .item:last-child {
-        border-right: 2px solid #ff0b0b;
-    }
 
 /* =========================================
    4. KEYFRAMES
