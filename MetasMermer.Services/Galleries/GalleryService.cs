@@ -42,7 +42,6 @@ public class GalleryService(IGalleryRepository _repository, IUnitOfWork _unitOfW
             var dummyPhoto = photo.Adapt<Gallery>();
             if (dummyPhoto != null)
             {
-
                 _repository.Delete(dummyPhoto.Id);
                 await _unitOfWork.SaveChangeAsync();
             }

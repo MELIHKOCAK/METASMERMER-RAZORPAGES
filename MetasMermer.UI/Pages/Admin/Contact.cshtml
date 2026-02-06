@@ -1,0 +1,72 @@
+﻿@page
+@model MetasMermer.UI.Pages.Admin.ContactModel
+@{
+}
+<style>
+    .mb20px {
+        margin-bottom: 20px;
+    }
+
+    div#content {
+        padding: 1vw;
+    }
+
+    input, select {
+        width: 95%;
+    }
+
+    u {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        max-width: 100%;
+    }
+</style>
+
+<div id="content">
+    <form method="post">
+        <div class="mb20px" id="mevcutDeger">
+            <label for="">Current First Phone Number: " <u>@Model._contactDto[0].Value</u> "</label>
+            <br />
+            <label for="">Current Second Phone Number " <u>@Model._contactDto[1].Value</u> "</label>
+            <br />
+            <label for="">Current Email Address: " <u>@Model._contactDto[2].Value</u> "</label>
+            <br />
+            <label for="">Current Map Link: " <u>@Model._contactDto[3].Value</u> "</label>
+            <br />
+            <label for="">Current Company Address: " <u>@Model._contactDto[4].Value</u> "</label>
+            <br />
+            <label for="">Current Map Embed Link: " <u>@Model._contactDto[5].Value</u> "</label>
+            <br />
+        </div>
+        <br />
+        <div class="mb20px" id="yeniDeger">
+            <label>New First Phone Number:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[0].Value" type="text" placeholder="Please enter your First Phone Number">
+            <br />
+            <label>New Second Phone Number:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[1].Value" type="text" placeholder="Please enter your second phone number">
+            <br />
+            <label>New Email Address:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[2].Value" type="text" placeholder="Please enter your email address">
+            <br />
+            <label>New Map Link:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[3].Value" type="text" placeholder="Please enter your map link. My advice: you dont change this section">
+            <br />
+            <label>New Company Address:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[4].Value" type="text" placeholder="Please enter your company address">
+            <br />
+            <label>New Map Embed Link:</label>
+            <br />
+            <input asp-for="@Model.UpdateContactDto[5].Value" type="text" placeholder="Please enter your embed map link. My advice: you dont change this section">
+        </div>
+        <div id="confirm">
+            <input type="submit" id="cta" value="CONFIRM">
+        </div>
+    </form>
+</div>

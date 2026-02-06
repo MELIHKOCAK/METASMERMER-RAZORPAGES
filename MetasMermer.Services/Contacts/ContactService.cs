@@ -24,12 +24,12 @@ public class ContactService(IContactRepository _repository, IUnitOfWork _unitOfW
         return contact.Adapt<ContactDto>();
     }
 
-    public async Task<List<UpdateContactDto>> Update(List<ContactDto> _contact)
+    public async Task<List<ContactDto>> Update(List<UpdateContactDto> _contact)
     {
         var contact = await _repository.GetAll(false).ToListAsync();
 
         if (contact is null)
-            return new List<UpdateContactDto> { new UpdateContactDto { Value = "Null"} };
+            return new List<ContactDto> { new ContactDto { Value = "Null"} };
 
         for (int i = 0; i < contact.Count; i++)
             contact[i].Value = _contact[i].Value;
@@ -37,6 +37,6 @@ public class ContactService(IContactRepository _repository, IUnitOfWork _unitOfW
         _repository.UpdateList(contact);
         await _unitOfWork.SaveChangeAsync();
 
-        return contact.Adapt<List<UpdateContactDto>>();
+        return contact.Adapt<List<ContactDto>>();
     }
 }

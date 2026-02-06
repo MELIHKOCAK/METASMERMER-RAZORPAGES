@@ -6,5 +6,5 @@ public interface IContactService
 {
     Task<ContactDto> GetByIdAsync(int id);
     Task<List<ContactDto>> GetAllAsync();
-    Task<List<UpdateContactDto>> Update(List<ContactDto> contact);
+    Task<List<ContactDto>> Update(List<UpdateContactDto> contact);
 }
