@@ -1,0 +1,78 @@
+﻿@import '../abstracts/_variables.scss';
+@import '_typography.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: $font-primary;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Yatay taşmayı zorla gizle */
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    padding-right: 5px;
+}
+
+/* Dikkat: Bu img ayarı tüm siteyi etkiler. */
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    color: black;
+    font-size: $fs-md;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+
+/* Container Yapıları */
+.container {
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Başlıklar */
+.section-title {
+    font-size: $fs-2xl;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+.brand {
+    h1 {
+        font-size: $fs-xl;
+        text-transform: uppercase;
+        color: $cl-black;
+
+        span {
+            color: $cl-red;
+        }
+    }
+}
+
+.photos-container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px 10px;
+    justify-content: center;
+}

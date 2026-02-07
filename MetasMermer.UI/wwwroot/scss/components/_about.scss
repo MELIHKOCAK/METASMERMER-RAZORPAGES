@@ -1,0 +1,90 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+
+#about {
+    .about {
+        flex-direction: column-reverse;
+        text-align: center;
+        max-width: 1200px;
+        display: flex;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+    .col-left {
+        width: 250px;
+        height: 360px;
+
+        .about-img {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border: 10px solid $cl-white;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: -33px;
+                top: 19px;
+                height: 98%;
+                width: 98%;
+                border: 7px solid $cl-red;
+                z-index: -1;
+            }
+        }
+    }
+
+    .col-right {
+        width: 100%;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: .2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            color: $cl-black;
+            margin-bottom: 50px;
+            padding: 10px 20px;
+            font-size: 2rem;
+        }
+    }
+}
+
+
+@media (min-width:$bp-md){
+    #about {
+        .about {
+            flex-direction: row;
+        }
+
+        .col-left {
+            width: 600px;
+            height: 400px;
+            padding-left: 60px;
+
+            .about-img::after {
+                left: -45px;
+                top: 34px;
+                height: 98%;
+                width: 98%;
+                border: 10px solid #ff0b0b;
+            }
+        }
+
+        .col-right {
+            text-align: left;
+            padding: 30px;
+
+            h1 {
+                text-align: left;
+            }
+        }
+    }
+}

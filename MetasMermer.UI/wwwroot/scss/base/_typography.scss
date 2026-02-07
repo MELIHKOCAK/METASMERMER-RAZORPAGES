@@ -1,0 +1,37 @@
+﻿@import '../abstracts/_variables.scss';
+
+@font-face {
+    font-family: $font-primary;
+    src: url('#{$font-path}/Montserrat-Light.woff2');
+    font-weight: $fw-light; //300
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-primary;
+    src: url('#{$font-path}/Montserrat-Light.woff2');
+    font-weight: $fw-regular; //400
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-primary;
+    src: url('#{$font-path}/Montserrat-Light.woff2');
+    font-weight: $fw-medium; //500
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-primary;
+    src: url('#{$font-path}/Montserrat-Light.woff2');
+    font-weight: $fw-bold; //700
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-primary;
+    src: url('#{$font-path}/Montserrat-Light.woff2');
+    font-weight: $fw-extrabold; //800
+    font-style: normal;
+    font-display: swap;
+}

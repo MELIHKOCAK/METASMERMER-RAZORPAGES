@@ -1,0 +1,109 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+
+
+#hero {
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+
+    .hero {
+        max-width: 1200px;
+        padding: 0 50px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: .7;
+        z-index: -1;
+    }
+
+    h1 {
+        display: block;
+        width: fit-content;
+        font-size: 4rem;
+        position: relative;
+        color: transparent;
+        animation: text_reveal .5s ease forwards;
+        animation-delay: 1s;
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #ff0b0b;
+            animation: text_reveal_box 1s ease;
+            animation-delay: .5s;
+        }
+
+        &:nth-child(1) {
+            animation-delay: 1s;
+
+            span {
+                animation-delay: .5s;
+            }
+        }
+
+        &:nth-child(2) {
+            animation-delay: 2s;
+
+            span {
+                animation-delay: 1.5s;
+            }
+        }
+
+        &:nth-child(3) {
+            animation: text_reveal_name .5s ease forwards;
+            animation-delay: 3s;
+
+            span {
+                animation-delay: 2.5s;
+            }
+        }
+    }
+}
+
+
+@keyframes text_reveal_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color: $cl-white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: $cl-red;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: $bp-md){
+    #hero {
+        h1 {
+            font-size: $fs-hero;
+        }
+    }
+}

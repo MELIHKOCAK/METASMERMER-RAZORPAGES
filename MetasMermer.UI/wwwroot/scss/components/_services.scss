@@ -1,0 +1,40 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+#services {
+    .services {
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 50vh;
+        width: 100%;
+        @include flex-layout();
+    }
+
+    .service-top {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width:$bp-md){
+    /* Services */
+    #services {
+        .service-bottom {
+            .service-item {
+                flex-basis: 45%;
+                margin: 2.5%;
+            }
+        }
+    }
+}
+
+@media (min-width:$bp-xl){
+    #services {
+        .service-bottom {
+            .service-item {
+                flex-basis: 22%;
+                margin: 1.5%;
+            }
+        }
+    }
+}

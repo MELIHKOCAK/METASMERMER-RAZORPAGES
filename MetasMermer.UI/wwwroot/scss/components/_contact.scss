@@ -1,0 +1,118 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+
+#contact {
+
+    .contact {
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contact-items {
+        width: 100%;
+        max-width: 98vw;
+        padding: 0 10px;
+    }
+
+    .icon {
+        width: 70px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .contact-info {
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            line-height: 2rem;
+            font-weight: 500;
+        }
+    }
+
+    .contact-item {
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 30px;
+        @include flex-layout();
+        box-shadow: 0px 0px 18px 0 $cl-red;
+        transition: .3s ease box-shadow;
+
+        &:hover {
+            box-shadow: 0px 0px 5px 0 $cl-red;
+        }
+    }
+}
+
+@media (min-width:$bp-md){
+
+    #contact {
+
+        .contact {
+            flex-direction: column;
+            padding: 50px 0;
+            align-items: center;
+            justify-content: center;
+            min-width: 20vh;
+        }
+
+        .contact-items {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 0;
+        }
+
+        .contact-item {
+            width: 30%;
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+            height: auto;
+            min-height: 150px;
+
+            .icon {
+                height: 100px;
+                width: 100px;
+                flex-shrink: 0;
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .contact-info {
+                flex: 1; /* Kalan boşluğun tamamını kapla */
+                min-width: 0; /* Flexbox içinde metnin sıkışmasına ve kırılmasına izin ver (ÇOK ÖNEMLİ) */
+                text-align: left;
+                padding-left: 0; /* İkon margin verdiği için buradaki padding'i silebiliriz veya azaltabiliriz */
+                /* Metin taşmasını önleyen sihirli kodlar: */
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-word; /* Mail adresi sığmazsa aşağı atar */
+
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 5px;
+                }
+
+                h2 {
+                    font-size: 1.6rem; /* Mail adresi çok büyükse küçült */
+                    line-height: 1.8rem;
+                }
+            }
+        }
+    }
+}

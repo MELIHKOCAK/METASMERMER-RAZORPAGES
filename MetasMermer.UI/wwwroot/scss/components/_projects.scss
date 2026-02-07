@@ -1,0 +1,110 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+
+#projects {
+
+    .projects {
+        flex-direction: column;
+        max-width: 1200px;
+        margin: 0 auto;
+    }   
+
+    .all-projects {
+        @include flex-layout();
+    }
+
+    .project-item {
+        @include flex-layout();
+        width: 80%;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .project-info {
+        padding: 30px;
+        flex-basis: 50%;
+        height: 100%;
+        @include flex-layout(column,center,flex-start);
+        background-image: linear-gradient(65deg, #ff0b0b 0%, #000000 110%);
+        color: $cl-white;
+
+        h1 {
+            font-size: $fs-2xl;
+            font-weight: 500;
+            color: $cl-white;
+            -webkit-text-stroke-width: .1px;
+            -webkit-text-stroke-color: $cl-red;
+        }
+
+        p {
+            color: $cl-white;
+        }
+    }
+}
+
+
+@media (min-width:$bp-sm){
+
+    #projects {
+        .project-item {
+            height: 380px;
+            margin: 0;
+            width: 90vw;
+            border-radius: 0;
+
+            .project-info {
+                p {
+                    font-size: $fs-base;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:$bp-md){
+    /* Projects - Yan yana gelme işlemi */
+    #projects {
+        .project-item {
+            flex-direction: row;
+            height: 400px;
+            margin: 0;
+            width: 90vw;
+            border-radius: 0;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .all-projects {
+            .project-info {
+                height: 100%;
+            }
+
+            .project-img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width:$bp-lg) {
+    #projects {
+        .project-item {
+            height: 400px;
+            width: 90vw;
+            border-radius: 0;
+
+            .project-info {
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
