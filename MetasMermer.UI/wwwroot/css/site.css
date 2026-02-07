@@ -87,14 +87,6 @@ p {
     justify-content: center;
 }
 
-.container2 {
-    min-height: 50vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Başlıklar */
 .section-title {
     font-size: 4rem;
@@ -445,6 +437,11 @@ p {
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #services .service-top {
@@ -714,10 +711,6 @@ p {
         border-radius: 0;
     }
 
-        #projects .project-item .project-info h1 {
-            font-size: 2.5rem;
-        }
-
         #projects .project-item .project-info p {
             font-size: 1.6rem;
         }
@@ -882,11 +875,11 @@ p {
     }
 
         #projects .project-item .project-info h1 {
-            font-size: 3rem;
+            font-size: 4rem;
         }
 
         #projects .project-item .project-info p {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
 
