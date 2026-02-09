@@ -3,9 +3,9 @@
 cta {
     display: inline-block;
     padding: 10px 30px;
-    color: black;
+    color: $cl-black;
     background-color: transparent;
-    border: 2px solid #ff0b0b;
+    border: 2px solid $cl-red;
     font-size: $fs-md;
     text-transform: uppercase;
     letter-spacing: .1rem;
@@ -15,7 +15,7 @@ cta {
 
     &:hover {
         color: white !important;
-        background-color: #ff0b0b;
+        background-color: $cl-red;
     }
 }
 

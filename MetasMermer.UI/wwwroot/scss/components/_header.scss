@@ -26,7 +26,7 @@
             ul {
                 list-style: none;
                 position: absolute;
-                background-color: white;
+                background-color: $cl-white;
                 width: 100vw;
                 height: 100vh;
                 left: 100%;
@@ -80,7 +80,7 @@
         height: 60px;
         width: 60px;
         display: inline-block;
-        border: 3px solid rgb(0, 0, 0);
+        border: 3px solid $cl-black;
         border-radius: 50%;
         position: relative;
         display: flex;
@@ -97,7 +97,7 @@
             height: 100%;
             width: 100%;
             border-radius: 50%;
-            border: 3px solid rgb(0, 0, 0);
+            border: 3px solid $cl-black;
             animation: hamburger_puls 1s ease infinite;
         }
 
@@ -105,7 +105,7 @@
             height: 2px;
             width: 30px;
             position: relative;
-            background-color: rgb(0, 0, 0);
+            background-color: $cl-black;
             z-index: -1;
 
             &::after {
@@ -115,7 +115,7 @@
                 height: 100%;
                 width: 100%;
                 left: 0;
-                background-color: rgb(0, 0, 0);
+                background-color: $cl-black;
                 transition: .3s ease;
                 transition-property: top, bottom;
             }
@@ -126,7 +126,7 @@
                 height: 100%;
                 width: 100%;
                 left: 0;
-                background-color: rgb(0, 0, 0);
+                background-color: $cl-black;
                 transition: .3s ease;
                 transition-property: top, bottom;
                 bottom: 8px;

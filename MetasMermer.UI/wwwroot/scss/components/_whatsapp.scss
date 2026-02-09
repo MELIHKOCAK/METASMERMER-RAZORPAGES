@@ -23,7 +23,7 @@
 
 .chat-header {
     background-color: #25D366;
-    color: white;
+    color: $cl-white;
     padding: 10px 15px;
     border-radius: 12px 12px 0 0;
     @include flex-layout(row, space-between, center);
@@ -34,7 +34,7 @@
 .close-btn {
     background: none;
     border: none;
-    color: white;
+    color: $cl-white;
     font-size: $fs-md;
     cursor: pointer;
 }
