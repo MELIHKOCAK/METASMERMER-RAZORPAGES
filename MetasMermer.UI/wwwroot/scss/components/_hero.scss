@@ -96,7 +96,7 @@
 @keyframes text_reveal_name {
     100% {
         color: $cl-red;
-        font-weight: 500;
+        font-weight: $fw-medium;
     }
 }
 
