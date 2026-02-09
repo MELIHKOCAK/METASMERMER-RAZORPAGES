@@ -1,0 +1,41 @@
+﻿@import '../abstracts/_mixin.scss';
+@import '../abstracts/_variables.scss';
+
+.photos-container{
+    display:grid;
+    gap: 10px,10px;
+    justify-content:center;
+    grid-template-columns:repeat(1,auto);
+}
+
+.item{
+    padding: 5px;
+    border: 2px solid $cl-red;
+    border-radius: 5px;
+    box-sizing:border-box;
+}
+
+
+@media (min-width:$bp-sm){
+    .photos-container {
+        grid-template-columns: repeat(2,auto);
+    }
+}
+
+@media (min-width:$bp-md) {
+    .photos-container {
+        grid-template-columns: repeat(4,auto);
+    }
+}
+
+@media (min-width:$bp-xl) {
+    .photos-container {
+        grid-template-columns: repeat(6,auto);
+    }
+}
+
+@media (min-width:$bp-2xl) {
+    .photos-container {
+        grid-template-columns: repeat(8,auto);
+    }
+}

@@ -46,7 +46,7 @@
     @await Component.InvokeAsync("Footer")
     @await Component.InvokeAsync("Whatsapp")
 
-    <script src="~/javascript/site.js" asp-append-version="true"></script>
+    <script src="~/javascript/site.js" asp-append-version="true" defer></script>
     @await RenderSectionAsync("Scripts", required: false)
     <script>
 

@@ -9055,5 +9055,39 @@ p {
     transform: translateY(0);
   }
 }
+.photos-container {
+  display: grid;
+  gap: 10px, 10px;
+  justify-content: center;
+  grid-template-columns: repeat(1, auto);
+}
+
+.item {
+  padding: 5px;
+  border: 2px solid #ff0b0b;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .photos-container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (min-width: 768px) {
+  .photos-container {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+@media (min-width: 1280px) {
+  .photos-container {
+    grid-template-columns: repeat(6, auto);
+  }
+}
+@media (min-width: 1920px) {
+  .photos-container {
+    grid-template-columns: repeat(8, auto);
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

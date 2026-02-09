@@ -4,6 +4,7 @@ using MetasMermer.Repositories.EFCORE;
 using MetasMermer.Repositories.Extensition;
 using MetasMermer.Services;
 using MetasMermer.Services.Extensition;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace MetasMermer.UI
 {
@@ -37,6 +38,16 @@ namespace MetasMermer.UI
 
 
 
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 20 * 1024 * 1024; // 20 MB
+            });
+
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.Limits.MaxRequestBodySize = 20 * 1024 * 1024;
+            });
+
 
             builder.Services.AddRepositoryConfiguration(builder.Configuration);
             builder.Services.AddServiceExtensition();
@@ -58,6 +69,16 @@ namespace MetasMermer.UI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    const int durationInSeconds = 86400;
+                    ctx.Context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.CacheControl] =
+                        "public,max-age=" + durationInSeconds;
+                }
+            });
 
             app.UseRouting();
 
