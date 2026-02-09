@@ -26,7 +26,7 @@
         flex-basis: 50%;
         height: 100%;
         @include flex-layout(column,center,flex-start);
-        background-image: linear-gradient(65deg, #ff0b0b 0%, #000000 110%);
+        background-image: linear-gradient(65deg, $cl-red 0%, $cl-black 110%);
         color: $cl-white;
 
         h1 {

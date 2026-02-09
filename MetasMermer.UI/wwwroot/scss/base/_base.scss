@@ -31,11 +31,11 @@ img {
 }
 
 p {
-    color: black;
+    color: $cl-black;
     font-size: $fs-md;
     margin-top: 5px;
     line-height: 2.5rem;
-    font-weight: 300;
+    font-weight: $fw-light;
     letter-spacing: .05rem;
 }
 
@@ -50,7 +50,7 @@ p {
 /* Başlıklar */
 .section-title {
     font-size: $fs-2xl;
-    font-weight: 300;
+    font-weight: $fw-light;
     color: black;
     margin-bottom: 60px;
     text-transform: uppercase;

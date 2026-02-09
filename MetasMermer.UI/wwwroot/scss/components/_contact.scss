@@ -4,7 +4,6 @@
 #contact {
 
     .contact {
-        flex-direction: column;
         max-width: 1200px;
         margin: 0 auto;
     }
@@ -54,10 +53,8 @@
     #contact {
 
         .contact {
-            flex-direction: column;
             padding: 50px 0;
             align-items: center;
-            justify-content: center;
             min-width: 20vh;
         }
 
@@ -82,9 +79,7 @@
                 width: 100px;
                 flex-shrink: 0;
                 margin-right: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flex-layout();
 
                 img {
                     object-fit: contain;

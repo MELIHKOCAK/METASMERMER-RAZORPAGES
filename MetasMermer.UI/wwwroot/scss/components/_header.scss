@@ -83,9 +83,7 @@
         border: 3px solid $cl-black;
         border-radius: 50%;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-layout();
         z-index: 100;
         cursor: pointer;
         transform: scale(.8);

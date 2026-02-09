@@ -65,14 +65,11 @@
 
 
     img {
-        width: 35px; /* Genişliği sabitle */
-        height: 35px; /* Yüksekliği sabitle */
-        /* İkonun orantılı olarak sığmasını sağla */
+        width: 35px; 
+        height: 35px; 
         object-fit: contain;
-        /* Olası varsayılan boşlukları sıfırla */
         margin: 0;
         padding: 0;
-        /* Blok element gibi davranmasını sağla */
         display: block;
     }
 }
