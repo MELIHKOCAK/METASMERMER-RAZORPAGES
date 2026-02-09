@@ -8298,7 +8298,7 @@ p {
     font-size: 6rem;
   }
 }
-cta {
+.cta {
   display: inline-block;
   padding: 10px 30px;
   color: #000000;
@@ -8311,7 +8311,7 @@ cta {
   transition: 0.3s ease;
   transition-property: background-color, color;
 }
-cta:hover {
+.cta:hover {
   color: white !important;
   background-color: #ff0b0b;
 }
@@ -8586,7 +8586,7 @@ cta:hover {
   opacity: 0.7;
   z-index: -1;
 }
-#hero h1 {
+#hero h2 {
   display: block;
   width: fit-content;
   font-size: 4rem;
@@ -8595,7 +8595,7 @@ cta:hover {
   animation: text_reveal 0.5s ease forwards;
   animation-delay: 1s;
 }
-#hero h1 span {
+#hero h2 span {
   position: absolute;
   top: 0;
   left: 0;
@@ -8605,23 +8605,23 @@ cta:hover {
   animation: text_reveal_box 1s ease;
   animation-delay: 0.5s;
 }
-#hero h1:nth-child(1) {
+#hero h2:nth-child(1) {
   animation-delay: 1s;
 }
-#hero h1:nth-child(1) span {
+#hero h2:nth-child(1) span {
   animation-delay: 0.5s;
 }
-#hero h1:nth-child(2) {
+#hero h2:nth-child(2) {
   animation-delay: 2s;
 }
-#hero h1:nth-child(2) span {
+#hero h2:nth-child(2) span {
   animation-delay: 1.5s;
 }
-#hero h1:nth-child(3) {
+#hero h2:nth-child(3) {
   animation: text_reveal_name 0.5s ease forwards;
   animation-delay: 3s;
 }
-#hero h1:nth-child(3) span {
+#hero h2:nth-child(3) span {
   animation-delay: 2.5s;
 }
 
@@ -8647,7 +8647,7 @@ cta:hover {
   }
 }
 @media (min-width: 768px) {
-  #hero h1 {
+  #hero h2 {
     font-size: 6rem;
   }
 }
@@ -8715,7 +8715,7 @@ cta:hover {
   background-image: linear-gradient(65deg, #ff0b0b 0%, #000000 110%);
   color: #ffffff;
 }
-#projects .project-info h1 {
+#projects .project-info h2 {
   font-size: 4rem;
   font-weight: 500;
   color: #ffffff;
@@ -8765,7 +8765,7 @@ cta:hover {
     width: 90vw;
     border-radius: 0;
   }
-  #projects .project-item .project-info h1 {
+  #projects .project-item .project-info h2 {
     font-size: 4rem;
   }
   #projects .project-item .project-info p {
@@ -8803,7 +8803,7 @@ cta:hover {
 #about .col-right {
   width: 100%;
 }
-#about .col-right h2 {
+#about .col-right h3 {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
@@ -8839,7 +8839,7 @@ cta:hover {
     text-align: left;
     padding: 30px;
   }
-  #about .col-right h1 {
+  #about .col-right h2 {
     text-align: left;
   }
 }
@@ -8857,11 +8857,11 @@ cta:hover {
   margin: 0 auto;
   margin-bottom: 10px;
 }
-#contact .contact-info h1 {
+#contact .contact-info h2 {
   font-size: 2.5rem;
   margin-bottom: 5px;
 }
-#contact .contact-info h2 {
+#contact .contact-info h3 {
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 500;

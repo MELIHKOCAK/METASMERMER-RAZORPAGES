@@ -27,7 +27,7 @@
         z-index: -1;
     }
 
-    h1 {
+    h2 {
         display: block;
         width: fit-content;
         font-size: $fs-2xl;
@@ -102,7 +102,7 @@
 
 @media (min-width: $bp-md){
     #hero {
-        h1 {
+        h2 {
             font-size: $fs-hero;
         }
     }
