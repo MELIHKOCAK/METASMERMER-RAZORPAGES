@@ -51,11 +51,13 @@ p {
 .section-title {
     font-size: $fs-2xl;
     font-weight: $fw-light;
-    color: black;
+    color: $cl-black;
     margin-bottom: 60px;
     text-transform: uppercase;
     letter-spacing: .2rem;
     text-align: center;
+
+   
 }
 
 .brand {
@@ -75,4 +77,10 @@ p {
     grid-template-columns: repeat(1, auto);
     gap: 10px 10px;
     justify-content: center;
+}
+
+@media (min-width:$bp-md) {
+    .section-title {
+        font-size: $fs-hero;
+    }
 }
