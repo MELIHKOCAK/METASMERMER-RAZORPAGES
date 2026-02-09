@@ -23,12 +23,12 @@
 
     .contact-info {
         h1 {
-            font-size: 2.5rem;
+            font-size: $fs-lg;
             margin-bottom: 5px;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: $fs-md;
             line-height: 2rem;
             font-weight: 500;
         }
@@ -104,12 +104,12 @@
                 word-break: break-word; /* Mail adresi sığmazsa aşağı atar */
 
                 h1 {
-                    font-size: 2rem;
+                    font-size: $fs-md;
                     margin-bottom: 5px;
                 }
 
                 h2 {
-                    font-size: 1.6rem; /* Mail adresi çok büyükse küçült */
+                    font-size: $fs-base; /* Mail adresi çok büyükse küçült */
                     line-height: 1.8rem;
                 }
             }

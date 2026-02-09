@@ -30,7 +30,7 @@
     h1 {
         display: block;
         width: fit-content;
-        font-size: 4rem;
+        font-size: $fs-2xl;
         position: relative;
         color: transparent;
         animation: text_reveal .5s ease forwards;
