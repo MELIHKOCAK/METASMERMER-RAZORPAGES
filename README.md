@@ -28,7 +28,7 @@ Bu branch **vitrin ve rehber** amaçlıdır.
 ---
 
 ### 🔹 `legacy-branch`
-👉 [Legacy branch’i incele](../../tree/legacy-branch)
+👉 [Legacy branch’i incele](../../tree/legacy)
 
 Bu branch, projenin **ilk canlıya alınan halini** temsil eder.
 
@@ -43,11 +43,11 @@ teknik borçlar ve mimari problemler **açıkça açıklanmıştır**.
 ---
 
 ### 🔹 `refactored-branch`
-👉 [Refactor edilmiş branch’i incele](../../tree/refactored-branch)
+👉 [Refactor edilmiş branch’i incele](../../tree/refactored)
 
 Bu branch, legacy yapıdan yola çıkılarak yapılan **refactor çalışmasını** içerir.
 
-- Katmanlı mimari (Domain, Application, Infrastructure, Web)
+- Katmanlı mimari (Repository, Services, Web)
 - Sorumlulukların ayrıldığı temiz yapı
 - Daha okunabilir ve sürdürülebilir kod tabanı
 - Mimari kararların açıklandığı README
